@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project
+CLAUDE.md
+references/*.md
+!references/.gitkeep
+
+# Temp
+tmp/
+temp/
+*.tmp
