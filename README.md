@@ -1,36 +1,74 @@
 # PRD Master 📝
 
-> 用 Claude Code 写 PRD，从 3 小时压缩到 30 分钟
-
-[English](#english) | [中文](#中文)
+> 为 AI Startup 打造的 PRD 助手。帮你挖需求，说人话，推飞书。
+> 
+> 以及……一点独门秘笈。
 
 ---
 
-## 中文
+## 它是谁
 
-PRD Master 是一个 Claude Code 的 skill，帮你结构化地编写高质量产品需求文档。它不是模板填空，而是和你一起想清楚问题的产品搭档。
+PRD Master 是 Claude Code 的 Skill，专为 **AI Startup 团队**设计。
 
-### ✨ 核心特性
+我们知道你们的风格——点子多、执行猛，唯独对复杂的结构化文档……免疫。但很多复杂需求又必须要靠 PRD 精确定义。
 
-| 特性 | 说明 |
-|------|------|
-| 🎯 **深度追问** | 不是直接给答案，而是先帮你挖清楚需求 |
-| 📋 **8 章结构** | 固定章节顺序，覆盖问题→方案→数据→验收完整链路 |
-| 📊 **数据驱动** | 强制要求北极星指标、过程指标、埋点设计 |
-| 🔍 **自评体系** | 5 维度质量检查（问题定义/方案完整性/数据指标/可执行性/埋点覆盖）|
-| 🚀 **飞书集成** | 一键推送 PRD 到飞书文档并通知团队 |
-| 💾 **项目记忆** | 自动维护项目上下文，不用每次重复介绍背景 |
-| 🎨 **审美优先** | 要求用 Figma 画流程图，文档要好看 |
-| 📝 **下结论** | 有方案对比时给出推荐，不列选项让用户选 |
+所以我们换了个思路：**能不能让你们也快速写出结构清晰、自己还爱看的 PRD？**
 
-### 🚀 快速开始
+这就是 PRD Master。
 
-#### 1. 安装 Claude Code
+---
+
+## 三个绝活
+
+### 1️⃣ 帮你挖需求
+
+不是扔一句话就噼里啪啦开始写，而是先引导你回答：
+- 用户场景是什么？
+- 触发条件是什么？
+- 边界情况有哪些？
+- 数据是多少？
+
+**带你一起把事情想清楚**，而不是填完模板发现漏了关键逻辑。
+
+### 2️⃣ 说人话
+
+大部分 PRD，尤其是 AI 写的，语言习惯极其反人类，充满黑话。
+
+PRD Master 输出的东西是给**真实的人**看的——
+- 清晰，没废话
+- 敢下结论，不列选项让你选
+- 能不用专有名词就不用
+
+### 3️⃣ 推飞书
+
+写完直接发飞书：
+- 飞书文档生成
+- 自动归档  
+- 全组授权
+- 产研群通知
+
+**一气呵成**。以前写完 PRD 最烦的就是这些「最后一公里」，现在全省了。
+
+---
+
+## 还有彩蛋 🥚
+
+输入「**秘笈**」或「**彩蛋**」，你会发现这个 Skill 的底层价值观。
+
+（提示：和热情、真诚、思考、勇气、爱有关）
+
+---
+
+## 快速开始
+
+### 1. 安装 Claude Code
+
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-#### 2. 添加 Skill
+### 2. 添加 Skill
+
 ```bash
 # 进入你的项目目录
 cd your-project
@@ -40,36 +78,34 @@ mkdir -p .claude/skills/prd-master
 cp /path/to/prd-master/skill/SKILL.md .claude/skills/prd-master/
 ```
 
-#### 3. 开始使用
+### 3. 开始使用
+
 打开 Claude Code，直接说：
+
 ```
 帮我写个 PRD，做一个用户邀请功能
 ```
 
-### 📖 使用示例
+然后跟着它的引导一步步来。
 
-#### 场景 1：从 0 开始写功能 PRD
+---
+
+## 使用示例
+
+### 场景 1：从 0 开始写功能 PRD
+
 ```
 用户：帮我写个 PRD，做智能客服机器人
 
 Claude：你好！我是你的产品搭档。先问你几个问题：
-1. 这是哪个产品的功能？
-2. 用户现在遇到的具体痛点是什么？
+1. 用户是在什么具体场景下感受到这个痛？
+2. 如果不做这个功能，他们现在的替代方案是什么？
+3. 这个问题影响多少用户？
 ...
 ```
 
-#### 场景 2：已有草稿，需要完善
-```
-用户：我整理了一个需求，帮我看看有没有漏的
-[粘贴内容]
+### 场景 2：推送到飞书
 
-Claude：收到，我先过一遍。发现几个问题：
-- 边界情况没覆盖网络超时场景
-- 缺少具体的埋点设计
-...
-```
-
-#### 场景 3：推送到飞书
 ```
 用户：推飞书
 
@@ -78,45 +114,44 @@ Claude：好的，正在创建飞书文档...
 需要通知谁吗？
 ```
 
-### 🏗️ PRD 结构模板
+### 场景 3：彩蛋
 
-PRD Master 使用固定的 8 章结构：
+```
+用户：秘笈
+
+Claude：保持热情，真诚，思考，勇气和爱...
+```
+
+---
+
+## PRD 结构（8 章）
 
 ```markdown
 # {功能名}
 
 ## 一、为什么做这个
-- 现在的问题（带数据）
-- 我们要做什么
-- 做完之后用户感受
-
 ## 二、怎么做
-- 核心流程（Figma 流程图）
-- 关键细节
-
 ## 三、技术方案
-| 方案 | 好处 | 坏处 | 结论 |
-
 ## 四、字段定义
-| 字段 | 类型 | 说明 |
-
 ## 五、边界情况
-| 如果…… | 处理方式 |
-
 ## 六、数据分析
-- 现状数据
-- 假设与推算
-
 ## 七、怎么算做好了
-- 北极星指标
-- 过程指标
-- 验收标准
-
 ## 八、埋点
-| 事件名 | 触发时机 | 必传字段 | 用来验证 |
 ```
 
-### 📁 项目结构
+固定结构，不会漏掉关键内容。
+
+---
+
+## 设计细节
+
+- **项目记忆**：skill 会读取 `references/` 下的项目上下文文件，不用每次都解释「我们是做什么的」
+- **方法论驱动**：skill 里写的是通用的 PRD 经验和方法论，不是硬塞一份模板
+- **飞书 CLI 集成**：调用 `lark-cli` 完成文档创建和通知
+
+---
+
+## 项目结构
 
 ```
 .claude/
@@ -127,49 +162,14 @@ PRD Master 使用固定的 8 章结构：
             └── {project-slug}.md # 项目上下文文件
 ```
 
-### 🤝 贡献指南
+---
 
-欢迎 PR 和 Issue！请确保：
-1. 代码/文档通过所有测试
-2. 更新 CHANGELOG.md
-3. 遵循现有的写作风格
+## 贡献
 
-### 📜 License
-
-MIT License © 2025
+欢迎 PR 和 Issue。
 
 ---
 
-## English
-
-PRD Master is a Claude Code skill that helps you write high-quality Product Requirements Documents in a structured way. It's not a template filler—it's a product partner that thinks through problems with you.
-
-### ✨ Key Features
-
-| Feature | Description |
-|---------|-------------|
-| 🎯 **Deep Inquiry** | Doesn't give answers directly; helps you clarify requirements first |
-| 📋 **8-Section Structure** | Fixed chapter order covering problem → solution → data → acceptance criteria |
-| 📊 **Data-Driven** | Enforces north star metrics, process metrics, and tracking design |
-| 🔍 **Self-Review** | 5-dimension quality check |
-| 🚀 **Lark Integration** | One-click push to Lark Docs and team notification |
-| 💾 **Project Memory** | Auto-maintains project context |
-| 🎨 **Aesthetic First** | Requires Figma flowcharts, docs should look good |
-| 📝 **Decision Maker** | Gives recommendations, not just options |
-
-### 🚀 Quick Start
-
-```bash
-# Install Claude Code
-npm install -g @anthropic-ai/claude-code
-
-# Copy skill to your project
-mkdir -p .claude/skills/prd-master
-cp skill/SKILL.md .claude/skills/prd-master/
-```
-
-Then just tell Claude: "Help me write a PRD for [feature]"
-
-### 📜 License
+## License
 
 MIT License © 2025
