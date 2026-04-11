@@ -8,9 +8,9 @@
 
 ## 它是谁
 
-PRD Master 是 Claude Code 的 Skill，专为 **AI Startup 团队**设计。来自一个既干过大厂，又加入过AI Startup的非典型产品经理。
+PRD Master 是 Claude Code 的 Skill，专为 **AI Startup 团队**设计。来自一个既干过大厂，又加入过 AI Startup 的非典型产品经理。
 
-我知道你们的风格——点子多、执行猛，唯独有时候对复杂的结构化文档……免疫。PRD已死，原型当立！但很多复杂需求又必须要靠 PRD 精确定义。
+我知道你们的风格——点子多、执行猛，唯独有时候对复杂的结构化文档……免疫。PRD 已死，原型当立！但很多复杂需求又必须要靠 PRD 精确定义。
 
 所以我换了个思路：**能不能让海盗也快速写出结构清晰、自己还爱看的 PRD？**
 
@@ -46,9 +46,10 @@ PRD Master 输出的东西是给**真实的人**看的——
 - 自动归档  
 - 全组授权
 - 群通知
-- 以上功能基于飞书CLI，请确保你的终端安装了它。
 
-**一气呵成**。以前写完 PRD 最烦的就是这些「最后一公里」，现在全省了。
+一气呵成。以前写完 PRD 最烦的就是这些「最后一公里」，现在全省了。
+
+（基于飞书 CLI，请确保已安装 `lark-cli`）
 
 ---
 
@@ -60,34 +61,21 @@ PRD Master 输出的东西是给**真实的人**看的——
 
 ---
 
-## 快速开始
+## 一键安装
 
-### 1. 安装 Claude Code（以防你真的没有安装）
-
-```bash
-npm install -g @anthropic-ai/claude-code
-```
-
-### 2. 添加 Skill
+在你的项目目录下执行：
 
 ```bash
-# 进入你的项目目录
-cd your-project
-
-# 将 skill 文件复制到 .claude/skills/
-mkdir -p .claude/skills/prd-master
-cp /path/to/prd-master/skill/SKILL.md .claude/skills/prd-master/
+mkdir -p .claude/skills/prd-master && curl -o .claude/skills/prd-master/SKILL.md https://raw.githubusercontent.com/victorzhang016-code/prd-master/main/skill/SKILL.md
 ```
 
-### 3. 开始使用
-
-打开 Claude Code，直接说：
+然后告诉 Claude：
 
 ```
 帮我写个 PRD，做一个用户邀请功能
 ```
 
-然后跟着它的引导一步步来。
+跟着引导走就行。
 
 ---
 
