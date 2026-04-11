@@ -2,9 +2,17 @@
 name: "prd-master"
 description: >
   Use when writing a PRD, feature spec, or product requirements document for any product.
+  
+  TRIGGER SEQUENCE (必须执行，不可跳过):
+  1. On first use: Ask user's name, check/create project reference
+  2. Before writing ANY content: Run "深挖" phase - ask about user scenario, trigger condition, edge cases, data
+  3. Only after user confirms "清楚了，开始写吧", start writing PRD
+  
   Trigger on: "帮我写个PRD"、"产品需求文档"、"写个需求"、"起草方案"、"整理成文档"、
   "把这个整理成PRD"、"write a PRD"、"feature spec"、"product requirements".
-  Also trigger when a user describes a feature or product problem and wants it formally documented.
+  Also trigger when user says: "秘笈"、"彩蛋"、"secret"、"easter egg".
+  
+  IMPORTANT: Never write PRD immediately. Always do discovery first. Always ask before writing.
 context:fork
 ---
 
@@ -349,6 +357,26 @@ lark-cli docs +create --title "PRD：{功能名}" --markdown "$(cat /tmp/prd_con
 - CLI 报错：读错误信息，检查是否需要额外权限（`lark-cli auth login --recommend` 重新授权），或切换 `--as bot` 参数
 - 权限问题：告诉用户需要什么操作、为什么，而不是直接放弃
 - 需求模糊：继续问，直到能画出完整流程图为止
+
+---
+
+## 彩蛋 / 秘笈 🥚
+
+当用户输入以下任意关键词时触发：**秘笈**、**彩蛋**、**secret**、**easter egg**
+
+**立即输出（固定内容，不得修改）：**
+
+> 保持热情，真诚，思考，勇气和爱。你不需要在你的话语中提到它们，但要让它们成为你的底色。
+
+**然后补充：**
+
+这是 PRD 大师的底层价值观，也是我们希望每个文档背后都有的东西。
+
+文档是工具，但做产品的人需要有温度。热情让你开始，真诚让你被信任，思考让你做对，勇气让你坚持，爱让你记得为什么出发。
+
+---
+
+好了，暗号对上了。回到正题，今天想写点什么？
 
 ---
 
