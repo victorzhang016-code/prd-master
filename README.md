@@ -8,7 +8,7 @@
 
 ## 它是谁
 
-PRD Master 是 Claude Code 的 Skill，专为 **PM****AI Startup 团队****产品小白**和设计。来自一个既干过大厂，又加入过 AI Startup 的非典型产品经理。
+PRD Master 是 Claude Code 的 Skill，专为 **PM**、**AI Startup 团队**和**产品小白**设计。来自一个既干过大厂，又加入过 AI Startup 的非典型产品经理。
 
 我知道你们的风格——点子多、执行猛，唯独有时候对复杂的结构化文档……免疫。PRD 已死，原型当立！但很多复杂需求又必须要靠 PRD 精确定义。
 
