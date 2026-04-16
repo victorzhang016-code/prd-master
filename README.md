@@ -1,6 +1,6 @@
 # PRD Master 📝
 
-> 为 AI Startup 打造的 PRD 助手。帮你挖需求，说人话，推飞书。
+> 为 PM 、AI Startup 和个人Builder 打造的 PRD 助手。帮你挖需求，说人话，推飞书。
 > 
 > 以及……一点独门秘笈。
 
