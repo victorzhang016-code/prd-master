@@ -16,6 +16,13 @@
 - After the PRD is accepted or published, update `AGENTS.md` with reusable context only.
 - When a connector is requested, inspect the workspace for existing scripts or credentials first.
 
+## Context-isolated adversarial review
+
+- After the initial solution draft, use a fresh subagent with zero inherited turns for the adversarial review (`fork_turns: none` when the collaboration tool exposes that option).
+- Pass the reviewer only the normalized draft, evidence appendix, assumptions/open questions, and selected route. Do not forward the current conversation or hidden reasoning.
+- Ask for findings using `core/adversarial-review.md`; the reviewer returns findings and does not rewrite the PRD.
+- Reconcile Blocker and High findings in the parent task, then record counts, dispositions, and remaining risks in the final self-review.
+
 ## Compatibility note
 
 This adapter exists so Codex uses the same complete skill behavior as the strongest Claude variant, not a reduced branch.

@@ -15,6 +15,7 @@ Every adapter file must declare these fields:
 - Adapters may define host-specific tool-selection behavior.
 - Adapters must not remove or weaken the canonical discovery workflow.
 - Adapters must not replace the canonical self-review with a lighter version.
+- Adapters must preserve the context-isolated adversarial review. They may define how a fresh reviewer is invoked, but may not substitute an in-conversation critique.
 - Adapters must preserve the easter egg exactly.
 
 ## Decision boundary
@@ -24,6 +25,7 @@ Core owns:
 - discovery
 - PRD template
 - self-review
+- initial solution pass and context-isolated adversarial review contract
 - writing style
 - easter egg
 
@@ -33,3 +35,4 @@ Adapters own:
 - tool lookup behavior
 - diagram fallback behavior
 - publish invocation style
+- fresh-agent or separate-process invocation details

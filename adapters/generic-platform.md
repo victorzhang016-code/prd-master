@@ -16,6 +16,12 @@
 - If a reusable product context would help later, include a short `可复用上下文` section at the end of the response so the user can store it manually.
 - When publishing tools are not available, treat Markdown export as a successful outcome, not a failure.
 
+## Context-isolated adversarial review
+
+- If the platform exposes a fresh-agent or separate-process capability, pass only the normalized draft, evidence appendix, assumptions/open questions, and selected route to it.
+- If it exposes no such capability, create a standalone review-input artifact and clearly mark the review as unavailable rather than presenting an in-conversation critique as independent.
+- Apply the finding schema in `core/adversarial-review.md` whenever an independent reviewer is available.
+
 ## Skill-platform note
 
 This adapter is the default for weak-tool environments such as upload-only skill platforms. The writing quality should remain the same even when export automation becomes thinner.
