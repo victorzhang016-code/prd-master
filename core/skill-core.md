@@ -224,6 +224,28 @@ For user-facing work, this pass must also include the user path, the key screens
 
 Do not accept a first draft that makes the reader reconstruct the conclusion from a long background section. The initial draft must make the problem, core action, expected effect, and next decision easy to find.
 
+### 5.5 Run an evidence-to-contract coverage pass
+
+Section completeness is not evidence completeness. Before polishing the PRD, preserve the material facts from the source material and route each one into a product decision, contract, state, acceptance test, or metric.
+
+1. Extract every concrete incident, user-provided requirement, explicit constraint, and observed workaround from the prompt, artifacts, logs, screenshots, and research. Do not reduce a specific failure to a generic label such as “兼容性问题” or “链路不稳定”.
+2. Label each item as **confirmed**, **inferred**, or **unknown**. Keep inferred mechanism and ownership hypotheses separate from confirmed user-visible facts.
+3. Build a compact traceability ledger while drafting:
+
+   | Evidence or requirement | Broken promise | Product owner / layer | Required contract, state, or artifact | Acceptance proof |
+   |---|---|---|---|---|
+   | concrete source fact | what the user was promised | app, service, CLI, host, or operations | field, interface, status, error/recovery rule, or fixture | observable test result |
+
+4. For every material high-risk item, make at least one concrete landing point visible in the PRD: an interface/schema field, a state and failure action, a regression fixture, or an event/owner. A named concept without one of these landing points is not covered.
+5. Apply a **promise-to-proof check** to every terminal success state. State what machine evidence proves it, what the user sees, who owns the proof, and what happens when the preceding step succeeded but the promised outcome did not. For integrations, distinguish downloaded, verified, written, discovered, and usable when those are different facts.
+6. Keep the ledger selective and integrate its results into the relevant sections. Do not append a generic checklist or invent implementation detail merely to make the ledger look complete.
+
+Use these translations as a quick test:
+
+- “Package is complete” → required-file manifest, normalized tree check, publication block, and a named incomplete-package fixture.
+- “Host is supported” → host/system/version matrix, adapter contract, machine-verifiable host evidence, and a support gate tied to real regression.
+- “Installation succeeded” → separate artifact verification, write result, host discovery, and user-confirmed usability states with distinct copy and error recovery.
+
 ### 6. Run a context-isolated adversarial review
 
 After the initial solution pass and before publishing or treating the document as done, invoke a fresh reviewer agent with no inherited conversation context. The reviewer receives only the normalized draft, its evidence appendix, assumptions/open questions, and the selected document route. It must not receive the author's hidden reasoning or prior chat history.
@@ -377,6 +399,9 @@ Before finalizing, check:
 - Did the demand judgment select the right document type for the current decision?
 - Does the demand judgment identify the observed event, user job, broken contract, and solved state before proposing features?
 - Does the initial solution pass state the problem, core action, expected effect, and next decision in plain language near the front?
+- Does every material source fact or explicit requirement have a visible landing point in the PRD: a decision, contract/state, acceptance fixture, metric, or named validation task?
+- For each terminal success state, is there observable proof and a separate failure branch for partial success or false success?
+- For cross-system support claims, is support tied to a specific host/system/version combination and real regression evidence, with an explicit unsupported or limited path?
 - Is the problem specific and supported by evidence, or are assumptions clearly marked?
 - Does the PRD include the mandatory boundary-condition block, with explicit behavior for unsupported, empty, duplicate, stale, timeout, permission, partial-success, rollback, and resource-limit cases where relevant?
 - Does section 3 compare the relevant direct competitors, substitutes, and manual workaround using evidence, and map conclusions to decisions?

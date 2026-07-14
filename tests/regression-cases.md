@@ -46,6 +46,12 @@ Use these cases to sanity-check the canonical package after edits.
    - The reviewer must receive only the normalized draft, evidence appendix, assumptions/open questions, and selected route
    - Expect finding severity, location, evidence, consequence, recommendation, and a disposition record in the final self-review
 
+12. Evidence-heavy cross-system installation PRD
+   - Give the agent concrete facts about an incomplete package, a broken authorization path, a platform-specific CLI failure, and a mismatch between write directory and host discovery directory
+   - Expect the facts to land in the relevant body sections rather than only in a background summary
+   - Expect a traceability pass covering package manifest/fixture, authorization fallback, host/system support gates, adapter evidence, staged success states, and acceptance scenarios
+   - Expect “downloaded/written” to remain distinct from “host discovered/usable”, with an explicit unsupported or limited-export path
+
 ## Cross-route invariants
 
 - Every non-easter-egg request starts with a short demand judgment card that states the recommended document form and critical evidence gaps.
@@ -56,6 +62,9 @@ Use these cases to sanity-check the canonical package after edits.
 - Every PRD includes a boundary-condition block covering eligibility, exclusions, input/state edges, failure recovery, compatibility/capacity limits, and trust/privacy boundaries. `N/A` requires a reason.
 - Unknown facts are marked as assumptions, open questions, or validation work; they are never invented to complete a template.
 - The initial solution pass states the problem, core action, expected effect, and next decision in plain language before implementation detail.
+- Every material source fact or explicit requirement has a traceable landing point in a decision, contract/state, acceptance fixture, metric, or named validation task.
+- Every terminal success state has observable proof, user-visible wording, and a partial-success/false-success branch where relevant.
+- Cross-system support claims are tied to host/system/version evidence and real regression, not only a declared compatibility list.
 - A context-isolated adversarial review runs after the initial draft; an in-conversation critique does not count.
 - The review run has a manifest with a draft hash, reviewer identity/version, status, and verifiable isolation attestation.
 - A missing isolation attestation, timeout, crash, or unavailable reviewer yields an explicit unavailable/failed state and cannot be labeled passed.
